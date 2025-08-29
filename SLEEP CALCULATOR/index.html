@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sleeping Calculator helps you find the best time to sleep and wake up for a healthier lifestyle. Wake up refreshed and full of energy.">
+    <meta name="keywords"
+        content="sleep calculator, best sleep time, wake up calculator, sleep cycle, healthy sleep, sleeping tips">
+    <meta name="author" content="Sleeping Calculator Team">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Sleeping Calculator - Find Your Perfect Sleep Cycle">
+    <meta property="og:description"
+        content="Discover the best time to sleep and wake up with our Sleeping Calculator. Improve your sleep and health.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sleepingcalculator.netlify.app">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sleeping Calculator - Perfect Sleep Cycle">
+    <meta name="twitter:description"
+        content="Use our free Sleeping Calculator to optimize your sleep and wake up fresh every day.">
+    <title>Sleep Calculator - Optimize Your Sleep Cycles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">🌙 Sleep Calculator</div>
+        <div class="hamburger" id="hamburger">☰</div>
+        <nav class="nav" id="navMenu">
+            <a href="index.html" class="active-link">Home</a>
+            <a href="Blog.html">Blog</a>
+            <a href="contact.html">Contact us</a>
+            <a href="about.html">About us</a>
+        </nav>
+    </header>
+
+    <div class="header">
+        <h1>
+            <span class="moon-icon">🌙</span>
+            <span>Sleep Calculator</span>
+        </h1>
+        <div class="subtitle">
+            Optimize your sleep with 90 minute sleep cycles
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Calculator Form -->
+        <div id="calculator" class="calculator">
+            <div class="section">
+                <h2 class="section-title">Age Range</h2>
+                <div class="age-grid">
+                    <div class="age-button" data-age="0-3-months">
+                        <div>0-3</div>
+                        <div>Months</div>
+                    </div>
+                    <div class="age-button" data-age="4-11-months">
+                        <div>4-11</div>
+                        <div>Months</div>
+                    </div>
+                    <div class="age-button" data-age="1-2-years">
+                        <div>1-2</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="3-5-years">
+                        <div>3-5</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="6-13-years">
+                        <div>6-13</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="14-17-years">
+                        <div>14-17</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="18-25-years">
+                        <div>18-25</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="26-35-years">
+                        <div>26-35</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="36-45-years">
+                        <div>36-45</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="46-55-years">
+                        <div>46-55</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="56-64-years">
+                        <div>56-64</div>
+                        <div>Years</div>
+                    </div>
+                    <div class="age-button" data-age="65-years">
+                        <div>65+</div>
+                        <div>Years</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Sleep Schedule</h2>
+                <div class="schedule-options">
+                    <button class="schedule-option active" data-mode="wakeup">
+                        <span>☀️</span> Wake up at
+                    </button>
+                    <button class="schedule-option" data-mode="bedtime">
+                        <span>🌙</span> Go to bed at
+                    </button>
+                </div>
+            </div>
+
+            <div class="time-inputs">
+                <!-- Hour -->
+                <select class="time-input" id="hour">
+                    <option value="" disabled selected>Hr</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+
+                <!-- Minute -->
+                <select class="time-input" id="minute">
+                    <option value="" disabled selected>Min</option>
+                    <option value="00">00</option>
+                    <option value="05">05</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                </select>
+
+                <!-- AM/PM -->
+                <select class="time-input" id="ampm">
+                    <option value="" disabled selected>AM/PM</option>
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+
+            <button class="calculate-btn" onclick="calculateSleep()">Calculate</button>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results">
+            <div class="results-text" id="resultsText"></div>
+            <div class="results-grid" id="resultsGrid"></div>
+            <button class="go-back-btn" onclick="goBack()">
+                ← Go Back
+            </button>
+        </div>
+    </div>
+
+    <!-- Mattress Finder Section -->
+    <section class="mattress-finder-section" id="mattress-finder">
+        <div class="mattress-finder-container">
+            <!-- Header Section -->
+            <div class="mattress-finder-header">
+                <h2>Sleep even better with a new mattress</h2>
+                <p>Find your perfect mattress in less than 30 seconds</p>
+            </div>
+
+            <!-- Interactive Form -->
+            <div class="mattress-finder-form">
+                <!-- Sleep Position Dropdown -->
+                <div class="dropdown-container">
+                    <label for="sleep-position">I sleep on my</label>
+                    <div class="custom-dropdown" data-dropdown="sleep-position">
+                        <div class="dropdown-selected" id="sleep-position-selected">
+                            <span class="selected-text">Select</span>
+                            <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="dropdown-options" id="sleep-position-options">
+                            <div class="dropdown-option" data-value="back">Back</div>
+                            <div class="dropdown-option" data-value="side">Side</div>
+                            <div class="dropdown-option" data-value="stomach">Stomach</div>
+                            <div class="dropdown-option" data-value="combination">Multiple positions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pain Areas Dropdown -->
+                <div class="dropdown-container">
+                    <label for="pain-areas">I have pain in my</label>
+                    <div class="custom-dropdown" data-dropdown="pain-areas">
+                        <div class="dropdown-selected" id="pain-areas-selected">
+                            <span class="selected-text">Select</span>
+                            <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="dropdown-options" id="pain-areas-options">
+                            <div class="dropdown-option" data-value="none">No pain</div>
+                            <div class="dropdown-option" data-value="back">Back</div>
+                            <div class="dropdown-option" data-value="neck">Neck</div>
+                            <div class="dropdown-option" data-value="shoulders">Shoulders</div>
+                            <div class="dropdown-option" data-value="hips">Hips</div>
+                            <div class="dropdown-option" data-value="joints">Joints</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mattress Preference Dropdown -->
+                <div class="dropdown-container">
+                    <label for="mattress-preference">My preferred mattress is</label>
+                    <div class="custom-dropdown" data-dropdown="mattress-preference">
+                        <div class="dropdown-selected" id="mattress-preference-selected">
+                            <span class="selected-text">Select</span>
+                            <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="dropdown-options" id="mattress-preference-options">
+                            <div class="dropdown-option" data-value="soft">Soft</div>
+                            <div class="dropdown-option" data-value="medium">Medium</div>
+                            <div class="dropdown-option" data-value="firm">Firm</div>
+                            <div class="dropdown-option" data-value="extra-firm">Extra Firm</div>
+                            <div class="dropdown-option" data-value="no-preference">No preference</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Find Mattress Button -->
+                <button class="find-mattress-btn" id="find-mattress-btn" type="button">
+                    Find My Mattress
+                </button>
+            </div>
+
+            <!-- Results Section (Initially Hidden) -->
+            <div class="mattress-results" id="mattress-results" style="display: none;">
+                <h3>Your Perfect Mattress Match</h3>
+                <div class="results-content" id="results-content">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+                <button class="reset-finder-btn" id="reset-finder-btn" type="button">
+                    Find Another Mattress
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <center>
+            <h2 style="color:rgb(231, 231, 14)">Frequently Asked Questions (FAQs)</h2>
+        </center>
+        <div class="faq-item">
+            <h3>What is a Sleep Calculator and How Does It Help? </h3>
+            <p>A sleep calculater helps you determine the best times to go to sleep or wake up based on your sleep
+                cycles,ensuring you wake up feeling refreshed and energized.It calculates your sleep schedule by
+                considering 90-minute sleep cycles,which is the average length of one full cycle including light and
+                deep sleep stages.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What Are Sleep Cycles and Why Are They Important?</h3>
+            <p>A sleep calculator helps you determine the best times to go to sleep or wake up based on your sleep
+                cycles, ensuring you wake up feeling refreshed and energized. It calculates your sleep schedule by
+                considering 90-minute sleep cycles, which is the average length of one full cycle including light and
+                deep sleep stages.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How Many Hours of Sleep Do Adults Need?</h3>
+            <p>Most adults need between 7 to 9 hours of sleep each night for optimal health and functioning. Using a
+                sleep calculator can help you plan your sleep in cycles to achieve restorative rest without feeling
+                groggy. </p>
+        </div>
+        <div class="faq-item">
+            <h3>What Are Sleep Cycles and Why Are They Important?</h3>
+            <p>Sleep cycles consist of multiple stages of sleep including light, deep, and REM sleep. Each cycle lasts
+                about 90 minutes. Timing your sleep around these cycles improves the quality of rest and helps you wake
+                up naturally without feeling tired.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How Can a Sleep Calculater Improve My Sleep Quality?</h3>
+            <p> A sleep calculator helps align your sleep duration with your natural body rhythms by suggesting ideal
+                bedtimes and wake-up times. Following these recommended times can reduce morning grogginess and improve
+                overall sleep quality.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Is It Better to Wake Up at the End of a Sleep Cycle?</h3>
+            <p>Yes, waking up at the end of a sleep cycle, rather than in the middle, helps you feel more alert and
+                rested. Sleep calculators are designed to suggest waking times that coincide with the end of your sleep
+                cycles.</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <p>© 2025 Sleep Calculator | Sleep Better</p>
+        <p>
+            <a href="about.html">About</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="privacy.html">Privacy</a> |
+            <a href="terms.html">Terms</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
